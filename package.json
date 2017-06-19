@@ -1,10 +1,11 @@
 {
   "name": "zfblog-node",
   "version": "1.0.0",
-  "description": "",
+  "description": "```\r mkdir 201702bog\r cd 201702bog\r npm init -y\r ```\r ## 安装依赖的模块\r ```\r npm install express ejs body-parser debug express-session connect-mongo mongoose connect-flash multer bootstrap -S\r ```",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -20,5 +21,13 @@
     "express-session": "^1.15.3",
     "mongoose": "^4.10.5",
     "multer": "^1.3.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiaxiangheng/www.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jiaxiangheng/www/issues"
+  },
+  "homepage": "https://github.com/jiaxiangheng/www#readme"
 }
