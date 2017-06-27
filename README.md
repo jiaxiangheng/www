@@ -45,18 +45,18 @@ router.post('/signup',upload.single('avatar'),function(req,res)
 ```
 app.use(express.static(path.resolve('public')));
 ```
-##开发计划
+## 开发计划
 
-###2017.6 v1.0发布
+### 2017.6 v1.0发布
 
 - 支持注册、登录、上传头像、发表博文、管理删除文章、评价回复
 
-主要应用技术
-`node.js+express`处理后台业务逻辑
-`ejs+bootstrap`数据绑定和页面渲染
-`mongodb`数据存储和修改删除
+#### 主要应用技术
+- `node.js+express`处理后台业务逻辑
+- `ejs+bootstrap`数据绑定和页面渲染
+- `mongodb`数据存储和修改删除
 
-###v2.0 开发计划
+### v2.0 开发计划
 
 - 实现注册用户之间通信，
 - 基于WebSocket实现实时聊天，
