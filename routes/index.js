@@ -15,8 +15,8 @@ router.get('/',function(req,res){
     }
     Article.count(query,function(err,count){
         Article.find(query).sort({createAt:-1}).skip((pageNum-1)*pageSize).limit(pageSize).populate('user').exec(function(err,articles){
-                res.render('index',{
-                    title:'珠峰博客首页',
+            res.render('index',{
+                    title:'Node博客',
                     totalPages:Math.ceil(count/pageSize),
                     pageNum,
                     pageSize,

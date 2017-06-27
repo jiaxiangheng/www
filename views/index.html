@@ -7,7 +7,7 @@
             <div class="media-body">
                 <h4 class="media-heading"><a href="/article/detail/<%=article._id%>"><%=article.title%></a></h4>
                 <p><%=article.content%></p>
-                <p>作者：<%=article.user.username%>&nbsp;&nbsp;|&nbsp;&nbsp;发表时间：<%=article.createAt.toLocaleString()%>&nbsp;&nbsp;|&nbsp;&nbsp;浏览：<%=article.pageView%></p>
+                <p>作者：<%=article.user.username%>&nbsp;&nbsp;|&nbsp;&nbsp;发表时间：<%=article.createAt.toLocaleString()%>&nbsp;&nbsp;|&nbsp;&nbsp;浏览：<%=article.pageView%>&nbsp;&nbsp;|&nbsp;&nbsp;评论：<%=article.commentCnt%></p>
             </div>
         </div>
         <%})%>
@@ -31,7 +31,7 @@
                 <li><a>...</a></li>
                 <%}%>
                 <%for(let i=pageNum-2;i<=pageNum+2;i++){%>
-                <%if(i>0&&i<totalPages+1){%>
+                <%if(i>0&&i<(totalPages+1)){%>
                 <li class="<%=i==pageNum?'active':''%>"><a href="/?pageNum=<%=i%>"><%=i%></a></li>
                 <%}}%>
                 <%if(pageNum<2&&totalPages>4){%>
@@ -40,7 +40,7 @@
                 <%if(pageNum<3&&totalPages>4){%>
                 <li><a href="/?pageNum=5">5</a></li>
                 <%}%>
-                <%if(pageNum<totalPages){%>
+                <%if(pageNum<(totalPages)){%>
                 <li>
                     <a href="/?pageNum=<%=pageNum+1%>" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>

@@ -16,7 +16,7 @@ app.engine('html',require('ejs').__express);  //如果模板后缀是HTML的话�
 //设置中间件
 app.use(express.static(path.resolve('node_modules')));  //设置静态文件中间件
 app.use(express.static(path.resolve('public')));   //第二个静态文件中间件
-app.use(express.static(path.resolve('views/resume')));   //第二个静态文件中间件
+app.use(express.static(path.resolve('views/resume')));   //设置简历静态文件中间件
 app.use(bodyParser.urlencoded({extended:true}));  //使用bodyParser中间件
 app.use(session({  //设置会话中间件
     secret:'zfpx',
@@ -42,11 +42,14 @@ let user = require('./routes/user');
 let article = require('./routes/article');
 let category = require('./routes/category');
 let resume=require('./routes/resume');
+let comment=require('./routes/comment');
+let middleware=require('./middleware');
 
 app.use('/',index);  //如果客户端请求的路径是以 / 开头的话，才会交由index路由中间件来处理
 app.use('/user',user);
 app.use('/article',article);
-app.use('/category',category);
+app.use('/category',middleware.checkLogin,category);
+app.use('/comment',middleware.checkLogin,comment);
 app.use('/resume',resume);
 app.use(function(req,res,next){
     res.render('404',{title:'您的页面走丢了'})

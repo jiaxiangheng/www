@@ -23,14 +23,27 @@ let CategorySchema=new mongoose.Schema({
 let Category=mongoose.model('Category',CategorySchema);
 exports.Category=Category;
 
+//文章模型
 let ArticleSchema=new mongoose.Schema({
     title:String,
     content:String,
     category:{type:ObjectId,ref:'Category'},
     createAt:{type:Date,default:Date.now},
     pageView:{type:Number,default:0},  //浏览量
+    commentCnt:{type:Number,default:0},
     user:{type:ObjectId,ref:'User'}  //成为一个外键，ref表示此外键引用的是User集合的主键
 });
 
 let Article=mongoose.model('Article',ArticleSchema);
 exports.Article=Article;
+
+//文章评论模型
+let CommentSchema=new mongoose.Schema({
+    content:String,
+    article:{type:ObjectId,ref:'Article'},   //外键，获取评论的文章
+    commentId:{type:ObjectId,ref:'Comment'},  // 回复评论id，默认为0表示评论的是文章
+    createAt:{type:Date,default:Date.now},
+    user:{type:ObjectId,ref:'User'}   //外键，获取当前评论或者回复的用户
+});
+let Comment=mongoose.model('Comment',CommentSchema);
+exports.Comment=Comment;
