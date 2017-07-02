@@ -1,3 +1,26 @@
 </div>
 </body>
+<script>
+    $(function () {
+        let flag = 0;
+        $('.glyphicon').click(function () {
+            if (flag) {
+                $('.Nav-menu').hide();
+                $(this).removeClass('glyphicon glyphicon-remove').addClass('glyphicon glyphicon-menu-hamburger');
+                flag = 0;
+            } else {
+                $('.Nav-menu').show();
+                $(this).removeClass('glyphicon glyphicon-menu-hamburger').addClass('glyphicon glyphicon-remove');
+                flag = 1;
+            }
+        });
+        window.onresize = resizeBannerImage;//当窗口改变宽度时执行此函数
+        function resizeBannerImage() {
+            let winW = $(window).width();
+            if ($(window).width() > 768) {
+                $('.Nav-menu').show();
+            }
+        }
+    })
+</script>
 </html>

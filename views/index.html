@@ -1,6 +1,6 @@
 <% include ./include/header.html%>
 <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
+    <div class="col-sm-10">
         <% articles.forEach(function(article){%>
         <div class="media">
             <div class="media-left"><a href=""><img width="70" height="70" src="<%=article.user.avatar%>" class="media-object" alt=""></a></div>
@@ -53,4 +53,5 @@
 
     </div>
 </div>
+
 <% include ./include/footer.html%>
