@@ -5,11 +5,11 @@
         let flag = 0;
         $('.glyphicon').click(function () {
             if (flag) {
-                $('.Nav-menu').hide();
+                $('.Nav-menu').hide('slow');
                 $(this).removeClass('glyphicon glyphicon-remove').addClass('glyphicon glyphicon-menu-hamburger');
                 flag = 0;
             } else {
-                $('.Nav-menu').show();
+                $('.Nav-menu').show('slow');
                 $(this).removeClass('glyphicon glyphicon-menu-hamburger').addClass('glyphicon glyphicon-remove');
                 flag = 1;
             }
@@ -18,7 +18,7 @@
         function resizeBannerImage() {
             let winW = $(window).width();
             if ($(window).width() > 768) {
-                $('.Nav-menu').show();
+                $('.Nav-menu').show('slow');
             }
         }
     })
