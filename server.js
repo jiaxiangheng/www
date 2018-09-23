@@ -16,6 +16,7 @@ app.engine('html',require('ejs').__express);  //如果模板后缀是HTML的话�
 //设置中间件
 app.use(express.static(path.resolve('node_modules')));  //设置静态文件中间件
 app.use(express.static(path.resolve('public')));   //第二个静态文件中间件
+// 添加中间件
 app.use(express.static(path.resolve('views/resume')));   //设置简历静态文件中间件
 app.use(bodyParser.urlencoded({extended:true}));  //使用bodyParser中间件
 app.use(session({  //设置会话中间件
