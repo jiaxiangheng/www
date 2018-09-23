@@ -6,7 +6,7 @@ let MongoStore=require('connect-mongo')(session);  //把会话的数据保存到
 let app=express();
 let config=require('./config');  //引入数据库地址配置文件
 let flash=require('connect-flash');  //消息提示模块  依靠会话 一次销毁
-
+const fs=require("fs");
 
 //设置模板引擎
 app.set('view engine','html');  //设置模板文件类型为HTML
