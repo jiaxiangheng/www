@@ -1,3 +1,3 @@
 module.exports={
-    dbUrl:'mongodb://127.0.0.1/201702blog'
+    dbUrl:'mongodb://192.168.0.23/201702blog'
 };

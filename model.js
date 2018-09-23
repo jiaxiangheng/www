@@ -4,7 +4,7 @@ mongoose.Promise=Promise;  //用ES6自带的promise替代掉mongoose自带的pro
 let config=require('./config');
 let ObjectId=mongoose.Schema.Types.ObjectId;
 //2. 链接数据库
-mongoose.connect(config.dbUrl);
+mongoose.connect(config.dbUrl,{useMongoClient: true});
 //3. 定义Schema  定义文档属性名和属性的类型
 let UserSchema=new mongoose.Schema({
     username:String,
