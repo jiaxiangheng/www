@@ -391,7 +391,7 @@ html, body, .swiper-container, .swiper-slide {
     z-index: 100;
     letter-spacing: .03rem;
 }
-
+.page3 .project a{ color:#fff;}
 .page3 > img:nth-child(8) {
     top:6rem;
     left: .7rem;
@@ -459,6 +459,7 @@ html, body, .swiper-container, .swiper-slide {
 }
 .page4 > dd h2{ font-size: 0.35rem;
 }
+.page4 > dd h2 a{ color: #fff;}
 .page4 > img:nth-child(1) {
     top:.9rem;
     left: 3.6rem;
