@@ -42,7 +42,7 @@ let index=require('./routes/index');   //返回一个路由中间件
 let user = require('./routes/user');
 let article = require('./routes/article');
 let category = require('./routes/category');
-let resume=require('./routes/resume');
+//let resume=require('./routes/resume');
 let comment=require('./routes/comment');
 let middleware=require('./middleware');
 
@@ -51,9 +51,9 @@ app.use('/user',user);
 app.use('/article',article);
 app.use('/category',middleware.checkLogin,category);
 app.use('/comment',middleware.checkLogin,comment);
-app.use('/resume',resume);
+//app.use('/resume',resume);
 app.use(function(req,res,next){
     res.render('404',{title:'您的页面走丢了'})
 });
 
-app.listen(3000);
+app.listen(80);
